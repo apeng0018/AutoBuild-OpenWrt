@@ -1,4 +1,4 @@
-name: Build_NanoPi_R4S
+name: NanoPi_R4S
 
 on: 
   release:
