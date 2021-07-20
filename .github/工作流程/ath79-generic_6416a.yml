@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: openwrt-6416A
+name: openwrt-6416a
 
 on:
   push:
@@ -99,7 +99,7 @@ jobs:
           # 无论你想要对固件进行怎样的定制, 都需要且只需要修改 EOF 回环内的内容.
           # 
 
-          # 编译x64固件:
+          # 编译6416a固件:
           # cat >> .config <<EOF
           # CONFIG_TARGET_ath79=y
           # CONFIG_TARGET_ath79_generic=y
@@ -166,7 +166,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-wireguard=y
           # CONFIG_PACKAGE_luci-app-wrtbwmon=y
           # CONFIG_PACKAGE_luci-app-flowoffload=y
-            # CONFIG_PACKAGE_luci-app-mwan3helper=y
+          # CONFIG_PACKAGE_luci-app-mwan3helper=y
           # EOF
 
           # LuCI主题:
