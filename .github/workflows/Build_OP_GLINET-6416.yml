@@ -99,4 +99,4 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: OpenWrt
-        path: openwrt-glinet-6416/bin
+        path: openwrt/bin
