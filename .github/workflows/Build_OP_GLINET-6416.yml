@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name:openwrt_GLINET_6416
+name: openwrt_GLINET_6416
 
 on: 
   release:
