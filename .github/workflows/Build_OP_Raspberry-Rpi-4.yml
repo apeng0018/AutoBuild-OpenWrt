@@ -109,4 +109,4 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: OpenWrt
-        path: openwrt-Raspberry Pi 4/bin
+        path: openwrt/bin
