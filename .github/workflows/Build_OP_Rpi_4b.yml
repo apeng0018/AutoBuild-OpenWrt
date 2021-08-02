@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: OpenWrt-rpi-4
+name: Build_NanoPi_R4S
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
 
   build_openwrt:
 
-    name: Build OpenWrt-rpi-4 firmware
+    name: Nanopi_R4S firmware
 
     runs-on: ubuntu-latest
 
@@ -69,13 +69,13 @@ jobs:
           touch ./.config
 
           #
-          # ÔÚ cat >> .config <<EOF µ½ EOF Ö®¼ä¼ÓÉÏÄãµÄ×é×°ÅäÖÃ£¬Ðè×¢ÒâËõ½ø¹ØÏµ
-          #ÀýÈç£º
+          # åœ¨ cat >> .config <<EOF åˆ° EOF ä¹‹é—´åŠ ä¸Šä½ çš„ç»„è£…é…ç½®ï¼Œéœ€æ³¨æ„ç¼©è¿›å…³ç³»
+          #ä¾‹å¦‚ï¼š
 
-          Ã¨ >> .config <<EOF
-          CONFIG_TARGET_bcm27xx=y
-          CONFIG_TARGET_bcm27xx_bcm2711=y
-          CONFIG_TARGET_bcm27xx_bcm2711_DEVICE_rpi-4=y
+          çŒ« >> .config <<EOF
+          CONFIG_TARGET_rockchip=y
+          CONFIG_TARGET_rockchip_armv8=y
+          CONFIG_TARGET_rockchip_armv8_DEVICE_friendlyarm_nanopi-r4s=y
           EOF
 
           #
