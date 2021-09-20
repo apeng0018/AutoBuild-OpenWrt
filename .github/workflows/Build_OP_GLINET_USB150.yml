@@ -84,7 +84,7 @@ jobs:
     #  run: |
     #    git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-jerrykuku
 
-    - name: Configuration Customization GLINET_USB150
+    - name: Configuration Customization - Build_OP_GLINET_USB150
       env:
         CONFIG_FILE: 'glinet_usb150.config'
       run: |
@@ -99,7 +99,7 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
-    - name: Build OP_GLINET_USB150 firmware
+    - name: Build firmware
       working-directory: ./openwrt
       run: |
         echo -e "$(nproc) thread build."
