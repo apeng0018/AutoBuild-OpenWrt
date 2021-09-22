@@ -71,13 +71,7 @@ jobs:
       run: |
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        ./scripts/feeds install -a
-
-    #- name: Import external feeds - passwall
-    #  working-directory: ./openwrt
-    #  run: |
-    #    git clone https://github.com/xiaorouji/openwrt-passwall.git package/lienol
-    #    git clone "your_github_link" package/"your_folder_name"      
+        ./scripts/feeds install -a   
 
     #- name: Import external feeds - JerryKuKu Argon
     #  working-directory: ./openwrt
@@ -86,7 +80,7 @@ jobs:
 
     - name: Configuration Customization - Build_OP_Newifi_D2
       env:
-        CONFIG_FILE: 'Newifi-D2.config'
+        CONFIG_FILE: 'Newifi_D2.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
