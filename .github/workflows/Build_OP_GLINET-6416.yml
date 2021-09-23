@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: openwrt_GL-INET-6416a
+name: openwrt_GLINET-6416
 
 on: 
   release:
@@ -76,9 +76,9 @@ jobs:
     #  run: |
     #    git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-jerrykuku   
   
-    - name: Configuration Customization - Build-GLINET-6416a
+    - name: Configuration Customization - Build openwrt_GLINET-6416
       env:
-        CONFIG_FILE: 'glinet_6416a.config'
+        CONFIG_FILE: 'glinet_6416.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
