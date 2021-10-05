@@ -15,11 +15,11 @@ on:
     branches: 
       - master
 
-  #schedule:
-    #- cron: 0 8 * * 5
+  schedule:
+    - cron: 0 8 * * 5
   
   #watch:
-    #types: [started]
+  #  types: [started]
 
 jobs:
   build:
@@ -63,19 +63,18 @@ jobs:
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default\
+        echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        ./scripts/feeds install -a 
-
+        ./scripts/feeds install -a
     #- name: Import external feeds - JerryKuKu Argon
     #  working-directory: ./openwrt
     #  run: |
-    #    git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-jerrykuku
-
+    #    git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-jerrykuku   
+  
     - name: Configuration Customization - Build openwrt-GL-USB150
       env:
         CONFIG_FILE: 'glinet_usb150.config'
@@ -89,7 +88,7 @@ jobs:
       run: |
         make download -j$(nproc)
         find dl -size -1024c -exec ls -l {} \;
-        find dl -size -1024c -exec rm -f {} \;
+        find dl -size -1024c -exec rm -f {} \;    
     - name: Build firmware
       working-directory: ./openwrt
       run: |
