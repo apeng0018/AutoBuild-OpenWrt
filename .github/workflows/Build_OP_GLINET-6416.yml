@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: openwrt_GLINET-6416
+name: openwrt-GLINET-6416
 
 on: 
   release:
@@ -70,13 +70,12 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds install -a
-        
     #- name: Import external feeds - JerryKuKu Argon
     #  working-directory: ./openwrt
     #  run: |
     #    git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-jerrykuku   
   
-    - name: Configuration Customization - Build openwrt_GLINET-6416
+    - name: Configuration Customization - Build openwrt-GLINET-6416
       env:
         CONFIG_FILE: 'glinet_6416.config'
       run: |
@@ -89,14 +88,12 @@ jobs:
       run: |
         make download -j$(nproc)
         find dl -size -1024c -exec ls -l {} \;
-        find dl -size -1024c -exec rm -f {} \;
-        
+        find dl -size -1024c -exec rm -f {} \;    
     - name: Build firmware
       working-directory: ./openwrt
       run: |
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
-        
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
