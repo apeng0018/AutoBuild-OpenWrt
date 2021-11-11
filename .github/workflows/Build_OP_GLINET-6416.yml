@@ -75,11 +75,11 @@ jobs:
     #  run: |
     #    git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-jerrykuku   
   
-    - name: Configuration Customization - Build openwrt-GLINET-6416
+    - name: Configuration Customization - Build_OP_GLINET-6416
       env:
         CONFIG_FILE: 'glinet_6416.config'
       run: |
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/glinet_6416.config
         chmod +x ./customize.sh && ./customize.sh
         cd openwrt && make defconfig
         
